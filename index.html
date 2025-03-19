@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>TechVin - Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <style>
+        body {
+            background-color: #0a0f0f;
+            color: #ffffff;
+            font-family: 'Arial', sans-serif;
+        }
+        .hero {
+            background: url('https://source.unsplash.com/1600x900/?technology,computer') no-repeat center center/cover;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+        .suggestions {
+            position: absolute;
+            background: #1a1a1a;
+            border-radius: 0.5rem;
+            width: 100%;
+            z-index: 10;
+            max-height: 200px; /* Limitar a altura */
+            overflow-y: auto; /* Adicionar rolagem se necessário */
+            display: none; /* Inicialmente oculto */
+        }
+        .suggestion-item {
+            padding: 0.5rem;
+            cursor: pointer;
+        }
+        .suggestion-item:hover {
+            background: #2b2b2b;
+        }
+    </style>
+</head>
+<body>
+    <header class="bg-black py-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="flex items-center space-x-4">
+                <i class="fas fa-phone-alt"></i>
+                <span>(11) 97672-0737</span>
+                <i class="fas fa-envelope"></i>
+                <span>techvinoficial@gmail.com</span>
+            </div>
+            <div class="flex space-x-4">
+                <a href="https://facebook.com" class="text-white hover:text-gray-400"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/techvin.br/" class="text-white hover:text-gray-400"><i class="fab fa-instagram"></i></a>
+                <a href="https://twitter.com" class="text-white hover:text-gray-400"><i class="fab fa-twitter"></i></a>
+                <form action="search.html" method="GET" class="flex items-center relative">
+                    <input type="text" id="searchInput" placeholder="Pesquisar..." class="p-2 rounded-l-lg bg-gray-700 text-white focus:outline-none" oninput="showSuggestions(this.value)" />
+                    <button type="submit" class="bg-blue-500 text-white py-2 px-4 rounded-r-lg hover:bg-blue-600">
+                        <i class="fas fa-search"></i>
+                    </button>
+                    <div id="suggestions" class="suggestions"></div>
+                </form>
+                <a href="#" class="text-white hover:text-gray-400"><i class="fas fa-shopping-cart"></i></a>
+            </div>
+        </div>
+    </header>
+    <nav class="bg-black py-4">
+        <div class="container mx-auto flex justify-center space-x-8">
+            <a class="hover:text-gray-400" href="index.html">HOME</a>
+            <a class="hover:text-gray-400" href="servicos.html">SERVIÇOS</a>
+            <a class="hover:text-gray-400" href="produtos.html">PRODUTOS</a>
+            <a class="hover:text-gray-400" href="contato.html">CONTATO</a>
+        </div>
+    </nav>
+    <div class="hero">
+        <div class="bg-black bg-opacity-50 p-6 rounded-lg">
+            <h1 class="text-5xl font-bold">Bem-vindo à TechVin!</h1>
+            <p class="mt-4 text-lg">Rapidez e confiança para sua tecnologia em dia</p>
+        </div>
+    </div>
+    <main class="container mx-auto text-center py-12">
+        <h2 class="text-3xl font-bold mt-8">Nossos Serviços</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
+            <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
+                <img alt="Manutenção de computadores" src="https://storage.googleapis.com/a1aa/image/1diuhb9Gx7So-7DKADz6FN-DVrPFp0hAE680SHzjr2k.jpg" class="w-full h-48 object-cover rounded-md"/>
+                <h3 class="text-xl font-bold mt-4">Manutenção de Computadores</h3>
+                <p>✅ Diagnóstico completo e otimização de desempenho.</p>
+                <p class="text-lg font-bold">R$ 150,00</p>
+                <a href="servicos.html" class="mt-4 inline-block bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600">Saiba Mais</a>
+            </div>
+            <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
+                <img alt="Formatação" src="https://storage.googleapis.com/a1aa/image/pQf5J7mqbmnZv0YiVgxVb9TieK9PFVVe_VtH0mTCmP0.jpg" class="w-full h-48 object-cover rounded-md"/>
+                <h3 class="text-xl font-bold mt-4">Formatação de Sistemas</h3>
+                <p>✅ Instalação do sistema operacional e drivers.</p>
+                <p class="text-lg font-bold">R$ 120,00</p>
+                <a href="servicos.html" class="mt-4 inline-block bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600">Saiba Mais</a>
+            </div>
+            <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
+                <img alt="Instalação do Pacote Office" src="https://storage.googleapis.com/a1aa/image/4JxuJr9wEPtYFMS7zjsv5gmm1nY-QdWLTueYf6bWdd8.jpg" class="w-full h-48 object-cover rounded-md"/>
+                <h3 class="text-xl font-bold mt-4">Instalação do Pacote Office</h3>
+                <p>✅ Instalação e configuração do Office.</p>
+                <p class="text-lg font-bold">R$ 120,00</p>
+                <a href="servicos.html" class="mt-4 inline-block bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600">Saiba Mais</a>
+            </div>
+        </div>
+
+        <!-- Seção de Depoimentos -->
+        <h2 class="text-3xl font-bold mt-12">O que nossos clientes dizem</h2>
+        <div class="flex flex-col md:flex-row justify-center mt-8">
+            <div class="bg-gray-800 p-6 rounded-lg shadow-lg m-4">
+                <p>"Excelente serviço! Meu computador voltou a funcionar como novo!"</p>
+                <p class="mt-4 font-bold">- João Silva</p>
+            </div>
+            <div class="bg-gray-800 p-6 rounded-lg shadow-lg m-4">
+                <p>"Ótima experiência, recomendo a todos!"</p>
+                <p class="mt-4 font-bold">- Maria Oliveira</p>
+            </div>
+            <div class="bg-gray-800 p-6 rounded-lg shadow-lg m-4">
+                <p>"Profissionais competentes e atendimento rápido!"</p>
+                <p class="mt-4 font-bold">- Carlos Pereira</p>
+            </div>
+        </div>
+
+        <!-- Formulário para Adicionar Depoimentos -->
+        <h2 class="text-3xl font-bold mt-12">Deixe seu depoimento</h2>
+        <form class="mt-8" onsubmit="enviarDepoimento(event)">
+            <textarea id="depoimentoInput" class="w-full p-4 rounded-lg text-black" rows="4" placeholder="Seu depoimento..."></textarea>
+            <button type="submit" class="mt-4 bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600">Enviar</button>
+        </form>
+    </main>
+    <footer class="bg-black py-4">
+        <div class="container mx-auto text-center text-gray-400">
+            <p>&copy; 2023 TechVin. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        const services = [
+            { name: "Manutenção de Computadores", link: "servicos.html" },
+            { name: "Formatação de Sistemas", link: "servicos.html" },
+            { name: "Instalação do Pacote Office", link: "servicos.html" },
+            // Adicione mais serviços conforme necessário
+        ];
+
+        function showSuggestions(value) {
+            const suggestionsContainer = document.getElementById('suggestions');
+            suggestionsContainer.innerHTML = '';
+            if (value) {
+                const filteredServices = services.filter(service => service.name.toLowerCase().includes(value.toLowerCase()));
+                filteredServices.forEach(service => {
+                    const suggestionItem = document.createElement('div');
+                    suggestionItem.className = 'suggestion-item';
+                    suggestionItem.textContent = service.name;
+                    suggestionItem.onclick = () => {
+                        document.getElementById('searchInput').value = service.name; // Preencher o campo de pesquisa
+                        window.location.href = service.link; // Redirecionar para a página de serviços
+                    };
+                    suggestionsContainer.appendChild(suggestionItem);
+                });
+                if (filteredServices.length > 0) {
+                    suggestionsContainer.classList.remove('hidden');
+                    suggestionsContainer.style.display = 'block'; // Mostrar sugestões
+                } else {
+                    suggestionsContainer.classList.add('hidden');
+                    suggestionsContainer.style.display = 'none'; // Ocultar sugestões
+                }
+            } else {
+                suggestionsContainer.classList.add('hidden');
+                suggestionsContainer.style.display = 'none'; // Ocultar sugestões
+            }
+        }
+
+        function enviarDepoimento(event) {
+            event.preventDefault(); // Impede o envio padrão do formulário
+            const depoimento = document.getElementById('depoimentoInput').value;
+            const mensagem = `Depoimento: ${depoimento}`;
+            const whatsappUrl = `https://api.whatsapp.com/send?phone=5511976720737&text=${encodeURIComponent(mensagem)}`;
+            window.open(whatsappUrl, '_blank'); // Abre o WhatsApp com a mensagem
+            document.getElementById('depoimentoInput').value = ''; // Limpa o campo de texto
+        }
+    </script>
+</body>
+</html>

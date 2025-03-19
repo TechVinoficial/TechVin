@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechVin - Serviços</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <style>
+        body {
+            background-color: #0a0f0f;
+            color: #ffffff;
+            font-family: 'Arial', sans-serif;
+        }
+        header {
+            background-color: #222;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .servicos-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .servico {
+            background: #1a1a1a;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+            text-align: center;
+            transition: transform 0.2s;
+        }
+        .servico:hover {
+            transform: scale(1.05);
+        }
+        .servico img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+        footer {
+            background-color: #222;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
+        }
+        .carrinho {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #1a1a1a;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+            max-width: 300px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="top-bar">
+            <p class="telefone">(11) 97672-0737</p>
+        </div>
+        <div class="site-logo">
+            <img src="images/Site.png" alt="Imagem do site" class="site-image" style="width: 100px; height: auto; display: block; margin: 0 auto;">
+        </div>
+        <nav>
+            <h1>TechVin</h1>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="servicos.html">Serviços</a></li>
+                <li><a href="produtos.html">Produtos</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section id="servicos" class="py-12">
+        <h2 class="text-3xl font-bold text-center mb-8">Nossos Serviços</h2>
+        <div class="servicos-container">
+            <!-- Serviço 1 -->
+            <div class="servico">
+                <img src="images/manutenção.jpg" alt="Manutenção de computadores">
+                <p>✅ Manutenção de computadores e notebooks 💻 - <strong>R$ 150,00</strong></p>
+                <button onclick="adicionarCarrinho('Manutenção de computadores e notebooks', 150)" class="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600">Adicionar ao Carrinho</button>
+            </div>
+            <!-- Serviço 2 -->
+            <div class="servico">
+                <img src="images/formatacao.jpg" alt="Formatação">
+                <p>✅ Formatação e otimização do sistema ⚙ - <strong>R$ 120,00</strong></p>
+                <button onclick="adicionarCarrinho('Formatação e otimização do sistema', 120)" class="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600">Adicionar ao Carrinho</button>
+            </div>
+            <!-- Serviço 3 -->
+            <div class="servico">
+                <img src="images/office.jpg" alt="Instalação do Pacote Office">
+                <p>✅ Instalação do Pacote Office 📦 - <strong>R$ 120,00</strong></p>
+                <button onclick="adicionarCarrinho('Instalação do Pacote Office', 120)" class="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600">Adicionar ao Carrinho</button>
+            </div>
+            <!-- Serviço 4 -->
+            <div class="servico">
+                <img src="images/windows.jpg" alt="Ativação do Windows">
+                <p>✅ Ativação do Windows 🖥 - <strong>R$ 100,00</strong></p>
+                <button onclick="adicionarCarrinho('Ativação do Windows', 100)" class="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600">Adicionar ao Carrinho</button>
+            </div>
+            <!-- Serviço 5 -->
+            <div class="servico">
+                <img src="images/virus.jpg" alt="Remoção de vírus">
+                <p>✅ Remoção de vírus e malware 🛡 - <strong>R$ 130,00</strong></p>
+                <button onclick="adicionarCarrinho('Remoção de vírus e malware', 130)" class="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600">Adicionar ao Carrinho</button>
+            </div>
+            <!-- Serviço 6 -->
+            <div class="servico">
+                <img src="images/backup.jpg" alt="Backup">
+                <p>✅ Backup e recuperação de arquivos 📂 - <strong>R$ 100,00</strong></p>
+                <button onclick="adicionarCarrinho('Backup e recuperação de arquivos', 100)" class="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600">Adicionar ao Carrinho</button>
+            </div>
+            <!-- Serviço 7 -->
+            <div class="servico">
+                <img src="images/ssd.jpg" alt="Troca de HD/SSD">
+                <p>✅ Troca de HD/SSD e upgrade de hardware 🔄 - <strong>R$ 180,00</strong></p>
+                <button onclick="adicionarCarrinho('Troca de HD/SSD e upgrade de hardware', 180)" class="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600">Adicionar ao Carrinho</button>
+            </div>
+            <!-- Serviço 8 -->
+            <div class="servico">
+                <img src="images/Pasta.jpg" alt="Limpeza interna e troca de pasta térmica">
+                <p>✅ Limpeza interna e troca de pasta térmica ❄ - <strong>R$ 100,00</strong></p>
+                <button onclick="adicionarCarrinho('Limpeza interna e troca de pasta térmica', 100)" class="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600">Adicionar ao Carrinho</button>
+            </div>
+            <!-- Serviço 9 -->
+            <div class="servico">
+                <img src="images/ram.jpg" alt="Diagnóstico e reparo de problemas técnicos">
+                <p>✅ Diagnóstico e reparo de problemas técnicos 🔍 - <strong>R$ 150,00</strong></p>
+                <button onclick="adicionarCarrinho('Diagnóstico e reparo de problemas técnicos', 150)" class="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600">Adicionar ao Carrinho</button>
+            </div>
+            <!-- Serviço 10 -->
+            <div class="servico">
+                <img src="images/impressora.jpg" alt="Configuração de impressoras">
+                <p>✅ Manutenção de impressoras 🖨 - <strong>R$ 130,00</strong></p>
+                <button onclick="adicionarCarrinho('Manutenção de impressoras', 130)" class="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600">Adicionar ao Carrinho</button>
+            </div>
+        </div>
+    </section>
+
+    <div class="carrinho">
+        <h3>Carrinho</h3>
+        <ul id="itensCarrinho"></ul>
+        <p>Total: <span id="totalCarrinho">R$ 0,00</span></p>
+        <button onclick="finalizarCompra()" class="bg-green-500 text-white py-2 px-4 rounded hover:bg-green-600">Finalizar Compra</button>
+    </div>
+
+    <script>
+        let total = 0;
+        const itensCarrinho = [];
+
+        function adicionarCarrinho(servico, preco) {
+            itensCarrinho.push({ nome: servico, preco: preco }); // Armazenar o serviço e o preço
+            total += preco;
+            atualizarCarrinho();
+        }
+
+        function atualizarCarrinho() {
+            const lista = document.getElementById('itensCarrinho');
+            lista.innerHTML = '';
+            itensCarrinho.forEach((item, index) => {
+                const li = document.createElement('li');
+                li.textContent = `${item.nome} - R$ ${item.preco.toFixed(2)}`; // Exibir o nome e o preço do item
+                const removeButton = document.createElement('button');
+                removeButton.textContent = 'Remover';
+                removeButton.className = 'bg-red-500 text-white py-1 px-2 rounded ml-2 hover:bg-red-600';
+                removeButton.onclick = () => removerDoCarrinho(index); // Chamar a função de remoção
+                li.appendChild(removeButton);
+                lista.appendChild(li);
+            });
+            document.getElementById('totalCarrinho').textContent = `R$ ${total.toFixed(2)}`;
+        }
+
+        function removerDoCarrinho(index) {
+            total -= itensCarrinho[index].preco; // Subtrair o preço do total
+            itensCarrinho.splice(index, 1); // Remover o item do carrinho
+            atualizarCarrinho(); // Atualizar a exibição do carrinho
+        }
+
+        function finalizarCompra() {
+            const mensagem = `Serviços selecionados: ${itensCarrinho.map(item => item.nome).join(', ')}. Total: R$ ${total.toFixed(2)}`;
+            const whatsappUrl = `https://api.whatsapp.com/send?phone=5511976720737&text=${encodeURIComponent(mensagem)}`;
+            window.open(whatsappUrl, '_blank');
+        }
+    </script>
+</body>
+</html>
